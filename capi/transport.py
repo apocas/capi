@@ -4,8 +4,7 @@ import redis
 import urlparse
 import socket
 
-priority = ['ujson', 'simplejson', 'jsonlib2', 'json']
-for mod in priority:
+for mod in ['ujson', 'simplejson', 'jsonlib2', 'json']:
     try:
         json = __import__(mod)
     except ImportError:
