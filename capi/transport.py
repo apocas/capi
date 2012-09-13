@@ -2,6 +2,7 @@ import datetime
 import os
 import redis
 import urlparse
+import socket
 
 priority = ['ujson', 'simplejson', 'jsonlib2', 'json']
 for mod in priority:
