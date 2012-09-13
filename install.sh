@@ -14,5 +14,6 @@ mkdir /usr/local/capi
 cp -r ./capi* /usr/local/capi/
 
 echo "Installing init.d script /etc/init.d/capid"
-cp ./files/capid /etc/init.d/
+cp ./files/capid.conf /etc/capid.conf
+cp ./files/capid /etc/init.d/capid
 chmod +x /etc/init.d/capid
