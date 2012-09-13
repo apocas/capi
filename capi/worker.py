@@ -5,7 +5,7 @@ import errno
 
 class Worker(object):
 
-    def __init__(self, args, callback, extensions, tail_lines=0):
+    def __init__(self, args, callback, extensions = None, tail_lines=0):
         self.files_map = {}
         self.callback = callback
         self.extensions = extensions

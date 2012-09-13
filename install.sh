@@ -8,6 +8,7 @@ pip install redis
 pip install argparse
 pip install daemon
 pip install ConfigParser
+rm -rf ez_setup.py
 
 echo "Installing in /usr/local/capi"
 mkdir /usr/local/capi
