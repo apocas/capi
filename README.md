@@ -5,7 +5,7 @@ capi is a log watcher and dispatcher.
 
 It watches for changes in the specified logs and sends new entries to a redis database.
 
-Its basically beaver on steroids, capi is daemonized, multithreaded and only supports redis.
+Its basically beaver https://github.com/josegonzalez/beaver on steroids, capi is daemonized, multithreaded and only supports redis.
 
 Its perfect to use with your logstash setup.
 Originally it was made to work on cPanel servers without any pain, but its applications are endeless.
