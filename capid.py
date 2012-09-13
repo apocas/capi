@@ -112,14 +112,14 @@ class Workers(object):
         @staticmethod
         def create_worker(args):
                 os.nice(19)
-                transport = redis_transport.RedisTransport(args)
+                transport = transport.RedisTransport(args)
                 if args.path == None:
                     l = worker.Worker(args, transport.callback)
                 else:
                     l = worker.Worker(args, transport.callback, args.ext)
                 l.loop()
  
-class MyDaemon(Daemon):
+class capiDaemon(Daemon):
 
         def run(self):
                 threads = []
@@ -151,7 +151,7 @@ class MyDaemon(Daemon):
                     t.join()
  
 if __name__ == "__main__":
-        daemon = MyDaemon('/tmp/capid.pid')
+        daemon = capiDaemon('/tmp/capid.pid','/dev/null','/var/log/capid.log','/var/log/capid.log')
         if len(sys.argv) == 2:
                 if 'start' == sys.argv[1]:
                         daemon.start()

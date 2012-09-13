@@ -5,7 +5,7 @@ import errno
 
 class Worker(object):
 
-    def __init__(self, args, callback, extensions = None, tail_lines=0):
+    def __init__(self, args, callback, extensions = None):
         self.files_map = {}
         self.callback = callback
         self.extensions = extensions
@@ -13,16 +13,11 @@ class Worker(object):
 
         if self.config.path is not None:
             self.folder = os.path.realpath(args.path)
-            assert os.path.isdir(self.folder), "%s does not exists" \
-                                            % self.folder
+            assert os.path.isdir(self.folder), "%s does not exists" % self.folder
         assert callable(callback)
         self.update_files()
         for id, file in self.files_map.iteritems():
             file.seek(os.path.getsize(file.name))
-            if tail_lines:
-                lines = self.tail(file.name, tail_lines)
-                if lines:
-                    self.callback(file.name, lines)
 
     def __del__(self):
         self.close()
@@ -46,7 +41,6 @@ class Worker(object):
 
     @staticmethod
     def tail(fname, window):
-        """Read last N lines from file fname."""
         try:
             f = open(fname, 'r')
         except IOError, err:
