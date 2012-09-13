@@ -11,9 +11,9 @@ pip install ConfigParser
 
 echo "Installing in /usr/local/capi"
 mkdir /usr/local/capi
-cp -r ./capi* /usr/local/capi/
+cp -rf ./capi* /usr/local/capi/
 
 echo "Installing init.d script /etc/init.d/capid"
-cp ./files/capid.conf /etc/capid.conf
-cp ./files/capid /etc/init.d/capid
+cp -f ./files/capid.conf /etc/capid.conf
+cp -f ./files/capid /etc/init.d/capid
 chmod +x /etc/init.d/capid

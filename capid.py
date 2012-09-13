@@ -103,7 +103,9 @@ class Daemon:
                 self.start()
  
         def run(self):
-
+            """
+            logic
+            """
 
 class Workers(object):
         @staticmethod
@@ -123,7 +125,7 @@ class MyDaemon(Daemon):
                         pass
 
                     args = Object()
-                    
+
                     if(parser.get(section, 'type') == "file")
                         args.files = [parser.get(section, 'path')]
                     elif (parser.get(section, 'type') == "directory")
