@@ -3,7 +3,6 @@
 import sys, os, time, atexit
 from capi import worker
 from capi import transport
-from capi import redis_transport
 import datetime
 import argparse
 import errno

@@ -17,7 +17,7 @@ pip install ConfigParser
 rm -rf ez_setup.py
 
 echo "Installing in /usr/local/capi"
-if [ -d "/usr/local/capi" ]; then
+if [ ! -d "/usr/local/capi" ]; then
 	mkdir /usr/local/capi
 fi
 cp -rf ./capi* /usr/local/capi/
