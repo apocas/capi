@@ -126,9 +126,9 @@ class MyDaemon(Daemon):
 
                     args = Object()
 
-                    if(parser.get(section, 'type') == "file")
+                    if parser.get(section, 'type') == "file"
                         args.files = [parser.get(section, 'path')]
-                    elif (parser.get(section, 'type') == "directory")
+                    elif parser.get(section, 'type') == "directory"
                         args.path = parser.get(section, 'path')
                     args.key = parser.get(section, 'key')
                     args.mode = "bind"
