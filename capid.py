@@ -111,11 +111,11 @@ class Workers(object):
         @staticmethod
         def create_worker(args):
                 os.nice(19)
-                transport = transport.RedisTransport(args)
+                tt = transport.RedisTransport(args)
                 if args.path == None:
-                    l = worker.Worker(args, transport.callback)
+                    l = worker.Worker(args, tt.callback)
                 else:
-                    l = worker.Worker(args, transport.callback, args.ext)
+                    l = worker.Worker(args, tt.callback, args.ext)
                 l.loop()
  
 class capiDaemon(Daemon):
