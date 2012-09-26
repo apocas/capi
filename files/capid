@@ -1,4 +1,8 @@
 #! /bin/sh
+# chkconfig: 2345 95 20
+# description: logwatcher
+# capi logwatcher
+# processname: capid
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 DAEMON=/usr/local/capi/capid.py
