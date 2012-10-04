@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#lame cPanel bash script installer
+
 if [ ! -f /usr/bin/python ];
 then
 	echo "ERROR: python not installed!"
